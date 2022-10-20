@@ -62,7 +62,11 @@ renderFilteredContact = () => {
 componentDidMount() {
   const contacts = localStorage.getItem('contacts')
   const parsContacts = JSON.parse(contacts)
-  this.setState({contacts: parsContacts})
+
+  if (parsContacts) {
+    this.setState({contacts: parsContacts})
+  }
+  
 
 }
 
